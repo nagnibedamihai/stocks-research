@@ -1,0 +1,32 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "sl-eu-fra-2-portal.4.dblayer.com",
+            "port": 23265,
+            "driver": "MySQL",
+            "name": "Liquid Avatar Staging",
+            "group": "Liquid Avatar",
+            "database": "lqdavtr-staging",
+            "username": "admin",
+            "password": "ZSGXDCTPAJTVPVYN"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "sl-eu-fra-2-portal.4.dblayer.com",
+            "port": 23082,
+            "driver": "MySQL",
+            "name": "Liquid Avatar Production",
+            "database": "compose",
+            "password": "MENQFDCGISTGAIMY",
+            "username": "admin",
+            "group": "Liquid Avatar"
+        }
+    ]
+}
