@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Forecast</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+<div class="container main-container">
+    <div class="search-container">
+        <h1 class="mb-4"> Stock research </h1>
+        <form id="ticker-form">
+            <div class="input-group">
+                <input type="text" minlength="1" class="form-control" id="input-ticker" placeholder="Search ticker...">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-secondary" type="button" id="close-links">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    body {
+        background: linear-gradient(to bottom right, #81C784, #29B6F6, #43A047) no-repeat;
+        height: 100vh;
+    }
+    .main-container {
+        position: relative;
+        height: 100%;
+    }
+    h1 {
+        font-weight: 300;
+        color: #555;
+        font-size: 30px;
+    }
+    hr {
+        border-color: #ddd;
+    }
+    input, button {
+        border-radius: 0 !important;
+    }
+    .search-container {
+        width: 400px;
+        height: 180px;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid #dedede;
+        padding: 30px 20px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    *, h1 {
+        font-weight: 300;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        window.openWindows = [];
+        $("input:text").focus(function() { $(this).select(); } );
+        $('#ticker-form').on('submit', function (e) {
+            e.preventDefault();
+            const ticker = $('#input-ticker').val();
+            const links = [
+                `https://stocktwits.com/symbol/${ticker}`,
+                `https://finance.yahoo.com/quote/${ticker}?p=${ticker}&.tsrc=fin-srch`,
+                `https://money.cnn.com/quote/forecast/forecast.html?symb=${ticker.toLowerCase()}`,
+                `https://www.tipranks.com/stocks/${ticker.toLowerCase()}/forecast`,
+                `https://www.barchart.com/stocks/quotes/${ticker}/overview`,
+            ]
+            links.forEach((link) => {
+                let newWindow = window.open(link, '_blank');
+                window.openWindows.push(newWindow);
+            });
+        });
+        $('#close-links').on('click', function () {
+            window.openWindows.forEach(w => {
+                w.close();
+            });
+            $('#input-ticker').val('');
+        });
+
+    });
+</script>
+
+</body>
+</html>
