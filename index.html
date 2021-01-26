@@ -31,7 +31,7 @@
 
 <body>
     <div id="app">
-        <div class="container main-container pb-5">
+        <div class="container main-container">
             <div class="search-container">
                 <h1 class="mb-3"> {{ title }} </h1>
                 <p>
@@ -133,7 +133,7 @@
                     { name: 'Stocktwits', selected: true, link: 'https://stocktwits.com/symbol/${ticker}', ref: null },
                     { name: 'Yahoo Finance', selected: true, link: 'https://finance.yahoo.com/quote/${ticker}?p=${ticker}&.tsrc=fin-srch', ref: null },
                     { name: 'CNN Money', selected: true, link: 'https://money.cnn.com/quote/forecast/forecast.html?symb=${ticker}', ref: null },
-                    { name: 'TipRanks', selected: false, link: 'https://www.tipranks.com/stocks/${ticker}/forecast', ref: null },
+                    { name: 'TipRanks', selected: true, link: 'https://www.tipranks.com/stocks/${ticker}/forecast', ref: null },
                     { name: 'BarChart', selected: true, link: 'https://www.barchart.com/stocks/quotes/${ticker}/overview', ref: null },
                 ]
             },
