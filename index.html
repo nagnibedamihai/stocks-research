@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 mb-2 " v-for="source in sources">
+                    <div class="col-6 mb-2" v-for="source in sources">
                         <div class="pretty p-switch">
                             <input type="checkbox" v-model="source.selected" />
                             <div class="state p-success">
@@ -100,8 +100,8 @@
         }
 
         .search-container {
-            width: 400px;
-            height: 400px;
+            width: 440px;
+            height: 440px;
             background: rgba(255, 255, 255, 0.8);
             border: 1px solid #dedede;
             padding: 30px 20px;
@@ -132,9 +132,16 @@
                 sources: [
                     { name: 'Stocktwits', selected: true, link: 'https://stocktwits.com/symbol/${ticker}', ref: null },
                     { name: 'Yahoo Finance', selected: true, link: 'https://finance.yahoo.com/quote/${ticker}?p=${ticker}&.tsrc=fin-srch', ref: null },
+                    { name: 'Nasdaq', selected: true, link: 'https://www.nasdaq.com/market-activity/stocks/${ticker}', ref: null },
+                    { name: 'Wall Street Journal', selected: true, link: 'https://www.wsj.com/market-data/quotes/${ticker}', ref: null },
+                    { name: 'CNBC', selected: true, link: 'https://www.cnbc.com/quotes/${ticker}?qsearchterm=${ticker}', ref: null },
+                    { name: 'Business Insider', selected: true, link: 'https://markets.businessinsider.com/stocks/${ticker}', ref: null },
+                    { name: 'Finviz', selected: true, link: 'https://finviz.com/quote.ashx?t=${ticker}', ref: null },
+                    { name: 'MarketWatch', selected: true, link: 'https://www.marketwatch.com/investing/stock/${ticker}', ref: null },
                     { name: 'CNN Money', selected: true, link: 'https://money.cnn.com/quote/forecast/forecast.html?symb=${ticker}', ref: null },
                     { name: 'TipRanks', selected: true, link: 'https://www.tipranks.com/stocks/${ticker}/forecast', ref: null },
                     { name: 'BarChart', selected: true, link: 'https://www.barchart.com/stocks/quotes/${ticker}/overview', ref: null },
+                    { name: 'TradingView', selected: true, link: 'https://www.tradingview.com/symbols/${ticker}', ref: null },
                 ]
             },
 
