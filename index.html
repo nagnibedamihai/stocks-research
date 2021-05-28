@@ -25,6 +25,8 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
@@ -32,34 +34,38 @@
 <body>
     <div id="app">
         <div class="container main-container">
-            <div class="search-container">
-                <h1 class="mb-3"> {{ title }} </h1>
-                <p>
-                    Enter ticker name and select media outlets to search in.
-                    Click reset button to close tabs.
-                </p>
-                <div class="row mb-4">
-                    <div class="col-12">
-                        <form id="ticker-form" @submit.prevent="submitTicker()">
-                            <div class="input-group">
-                                <input @focus="$event.target.select()" v-model="ticker" type="text" minlength="1"
-                                    class="form-control" id="input-ticker" placeholder="Search ticker...">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-success" type="submit">Search</button>
-                                    <button class="btn btn-outline-secondary" type="button" @click="closeWindows()"
-                                        v-if="submitted">Reset</button>
-                                </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="card-container">
+                        <h1 class="mb-3"> {{ title }} </h1>
+                        <p>
+                            Enter ticker name and select media outlets to search in.
+                            Click reset button to close tabs.
+                        </p>
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <form id="ticker-form" @submit.prevent="submitTicker()">
+                                    <div class="input-group">
+                                        <input @focus="$event.target.select()" v-model="ticker" type="text" minlength="1"
+                                               class="form-control" id="input-ticker" placeholder="Search ticker...">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-success" type="submit">Search</button>
+                                            <button class="btn btn-outline-secondary" type="button" @click="closeWindows()"
+                                                    v-if="submitted">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                    </div>
-                </div>
+                        </div>
 
-                <div class="row">
-                    <div class="col-6 mb-2" v-for="source in sources">
-                        <div class="pretty p-switch">
-                            <input type="checkbox" v-model="source.selected" />
-                            <div class="state p-success">
-                                <label>{{ source.name }}</label>
+                        <div class="row">
+                            <div class="col-6 mb-2" v-for="source in sources">
+                                <div class="pretty p-switch">
+                                    <input type="checkbox" v-model="source.selected" />
+                                    <div class="state p-success">
+                                        <label>{{ source.name }}</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,6 +75,9 @@
     </div>
 
     <style>
+        * {
+            font-family: 'Comfortaa', cursive;
+        }
         body {
             background: linear-gradient(to bottom right, #81C784, #29B6F6, #43A047) no-repeat;
             height: 100vh;
@@ -99,18 +108,13 @@
             border-radius: 0 !important;
         }
 
-        .search-container {
-            width: 440px;
-            height: 440px;
-            background: rgba(255, 255, 255, 0.8);
+        .card-container {
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
             border: 1px solid #dedede;
             padding: 30px 20px;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
         }
 
         *,
@@ -138,7 +142,7 @@
                     { name: 'Business Insider', selected: true, link: 'https://markets.businessinsider.com/stocks/${ticker}', ref: null },
                     { name: 'Finviz', selected: true, link: 'https://finviz.com/quote.ashx?t=${ticker}', ref: null },
                     { name: 'MarketWatch', selected: true, link: 'https://www.marketwatch.com/investing/stock/${ticker}', ref: null },
-                    { name: 'CNN Money', selected: true, link: 'https://money.cnn.com/quote/forecast/forecast.html?symb=${ticker}', ref: null },
+                    { name: 'CNN Money', selected: true, link: 'https://money.cnn.com/quote/quote.html?symb=${ticker}', ref: null },
                     { name: 'TipRanks', selected: true, link: 'https://www.tipranks.com/stocks/${ticker}/forecast', ref: null },
                     { name: 'BarChart', selected: true, link: 'https://www.barchart.com/stocks/quotes/${ticker}/overview', ref: null },
                     { name: 'TradingView', selected: true, link: 'https://www.tradingview.com/symbols/${ticker}', ref: null },
