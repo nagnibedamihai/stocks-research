@@ -35,8 +35,8 @@
     <div id="app">
         <div class="container main-container">
             <div class="row">
-                <div class="col-12 col-lg-6">
-                    <div class="card-container">
+                <div class="col-12 col-xl-6 offset-xl-3">
+                    <div class="card-container mt-5">
                         <h1 class="mb-3"> {{ title }} </h1>
                         <p>
                             Enter ticker name and select media outlets to search in.
@@ -103,18 +103,17 @@
             border-color: #ddd;
         }
 
-        input,
-        button {
-            border-radius: 0 !important;
-        }
-
         .card-container {
             background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
             border: 1px solid #dedede;
             padding: 30px 20px;
-            border-radius: 20px;
+            border-radius: 4px;
             overflow: hidden;
             box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-container {
+
         }
 
         *,
@@ -125,6 +124,7 @@
         .p-switch label {
             padding-left: 5px;
         }
+
     </style>
     <script>
         var app = new Vue({
