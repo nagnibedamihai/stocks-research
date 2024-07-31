@@ -46,7 +46,10 @@
                             <div class="col-12">
                                 <form id="ticker-form" @submit.prevent="submitTicker()">
                                     <div class="input-group">
-                                        <input @focus="$event.target.select()" v-model="ticker" type="text" minlength="1"
+                                        <input @focus="$event.target.select()"
+                                               @keyup="uppercaseTicker()"
+                                               @change="uppercaseTicker()"
+                                               v-model="ticker" type="text" minlength="1"
                                                class="form-control" id="input-ticker" placeholder="Search ticker...">
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-success" type="submit">Search</button>
@@ -158,6 +161,10 @@
                             source.ref = window.open(link, '_blank');
                         }
                     });
+                },
+
+                uppercaseTicker() {
+                    this.ticker = this.ticker.toUpperCase();
                 },
 
                 closeWindows() {
