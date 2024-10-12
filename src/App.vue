@@ -1,24 +1,26 @@
 <template>
-  <div class="relative bg-white border-b border-gray-200">
+  <div class="relative bg-white shadow">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <div class="flex">
-          <div class="flex-shrink-0 flex items-center">
-            <router-link class="text-xl font-bold text-gray-900" to="/"
-              >Stocks Research 🚀
+          <div class="flex-shrink-0 flex items-center justify-center">
+            <router-link class="flex items-center" to="/">
+              <span class="text-xl w-24 font-semibold inline-block leading-5"
+                >Stocks Research</span
+              ><span class="inline-block w-10 text-2xl leading-0">🚀</span>
             </router-link>
           </div>
           <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
             <router-link
               :class="{
-                'border-indigo-500 text-gray-900': $route.path === '/',
+                'border-indigo-500 text-gray-900': $route.path === '/browser',
                 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700':
-                  $route.path !== '/',
+                  $route.path !== '/browser',
               }"
               class="border-b-2 text-sm font-medium inline-flex items-center"
-              to="/"
+              to="/browser"
             >
-              Home
+              Browser
             </router-link>
 
             <router-link
@@ -66,15 +68,15 @@
         <div class="pt-2 pb-3 space-y-1">
           <router-link
             class="border-indigo-500 text-gray-900 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-            to="/"
+            to="/browser"
           >
-            Home
+            Browser
           </router-link>
           <router-link
             class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-            to="/about"
+            to="/questionnaire"
           >
-            About
+            Questionnaire
           </router-link>
         </div>
       </div>
@@ -89,29 +91,3 @@ import { TransitionRoot } from "@headlessui/vue";
 
 const isOpen = ref(false);
 </script>
-
-<style lang="scss">
-body {
-  font-family: "Quicksand", sans-serif;
-}
-
-#app {
-  font-family: "Quicksand", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
