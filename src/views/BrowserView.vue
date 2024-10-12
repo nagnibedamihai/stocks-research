@@ -220,9 +220,6 @@ const search = () => {
       let link = source.link.split("${ticker}").join(ticker.value);
       source.ref = window.open(link, "_blank");
     }
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
   });
 };
 </script>
