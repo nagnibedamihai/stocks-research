@@ -149,52 +149,10 @@ const sources = reactive<Source[]>([
     link: "https://www.tradingview.com/symbols/${ticker}",
   },
   {
-    id: 13,
-    name: "Zacks",
-    selected: true,
-    link: "https://www.zacks.com/stock/quote/${ticker}",
-  },
-  {
-    id: 14,
-    name: "Seeking Alpha",
-    selected: true,
-    link: "https://seekingalpha.com/symbol/${ticker}",
-  },
-  {
-    id: 15,
-    name: "The Motley Fool",
-    selected: true,
-    link: "https://www.fool.com/quote/${ticker}",
-  },
-  {
-    id: 16,
-    name: "Investing.com",
-    selected: true,
-    link: "https://www.investing.com/equities/${ticker}",
-  },
-  {
-    id: 19,
-    name: "Investopedia",
-    selected: true,
-    link: "https://www.investopedia.com/markets/quote?tvwidgetsymbol=${ticker}",
-  },
-  {
-    id: 20,
-    name: "The Street",
-    selected: true,
-    link: "https://www.thestreet.com/quote/${ticker}.html",
-  },
-  {
-    id: 21,
-    name: "The Globe and Mail",
-    selected: true,
-    link: "https://www.theglobeandmail.com/investing/markets/stocks/${ticker}",
-  },
-  {
     id: 22,
-    name: "Stock Split History",
+    name: "Split History",
     selected: true,
-    link: "https://www.stocksplithistory.com/?symbol=${ticker}",
+    link: "https://www.splithistory.com//?symbol=${ticker}",
   },
 ]);
 
