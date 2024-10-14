@@ -173,18 +173,6 @@ const sources = reactive<Source[]>([
     link: "https://www.investing.com/equities/${ticker}",
   },
   {
-    id: 17,
-    name: "Reuters",
-    selected: true,
-    link: "https://www.reuters.com/companies/${ticker}",
-  },
-  {
-    id: 18,
-    name: "Bloomberg",
-    selected: true,
-    link: "https://www.bloomberg.com/quote/${ticker}:US",
-  },
-  {
     id: 19,
     name: "Investopedia",
     selected: true,
