@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04fdbc68-ffcf-4339-84d9-cd54ae0e8145" name="Default Changelist" comment="Updates">
+      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-laptop.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-money.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-mouse.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-newspaper.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-phone.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-type-error.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-type.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/BrowserView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BrowserView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/QuestionnaireView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/QuestionnaireView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +60,7 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/mihai/Projects/stocks-research/public/img/icons",
+    "last_opened_file_path": "/Users/mihai/Projects/stocks-research/public/img/gifs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -70,6 +78,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/img/gifs" />
       <recent name="$PROJECT_DIR$/public/img/icons" />
       <recent name="$PROJECT_DIR$/public" />
     </key>
@@ -103,7 +112,7 @@
       <workItem from="1728656722546" duration="4151000" />
       <workItem from="1728739926532" duration="12846000" />
       <workItem from="1728757182441" duration="3054000" />
-      <workItem from="1728908458304" duration="2768000" />
+      <workItem from="1728908458304" duration="8148000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1622216209547</created>
