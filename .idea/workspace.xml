@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04fdbc68-ffcf-4339-84d9-cd54ae0e8145" name="Default Changelist" comment="Updates">
-      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-laptop.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-money.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-mouse.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-newspaper.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-phone.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-type-error.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/gifs/monkey-type.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/DefaultSlider.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/DefaultTooltip.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/DefaultTooltip.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/QuestionnaireView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/QuestionnaireView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,27 +47,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/mihai/Projects/stocks-research/public/img/gifs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/mihai/Projects/stocks-research/node_modules/prettier",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "show.migrate.to.gradle.popup": "false",
-    "ts.external.directory.path": "/Users/mihai/Projects/stocks-research/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mihai/Projects/stocks-research/public/img/gifs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/mihai/Projects/stocks-research/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/mihai/Projects/stocks-research/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/img/gifs" />
@@ -113,6 +105,10 @@
       <workItem from="1728739926532" duration="12846000" />
       <workItem from="1728757182441" duration="3054000" />
       <workItem from="1728908458304" duration="8148000" />
+      <workItem from="1728986415650" duration="1825000" />
+      <workItem from="1729091984258" duration="3000" />
+      <workItem from="1729449869127" duration="6868000" />
+      <workItem from="1729459714813" duration="5502000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1622216209547</created>

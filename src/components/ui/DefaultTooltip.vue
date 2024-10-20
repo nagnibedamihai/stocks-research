@@ -1,5 +1,5 @@
 <template>
-  <div class="relative inline-block">
+  <div :id="id" class="relative inline-block">
     <slot></slot>
     <Transition
       enter-active-class="transition duration-200 ease-out"
@@ -24,10 +24,15 @@
 <script lang="ts" setup>
 import { computed, defineProps, onMounted, onUnmounted, ref } from "vue";
 
+const randomString = Math.random().toString(36).substr(2, 9).toString();
+
 const props = defineProps<{
   text: string;
+  id?: string;
   position?: "top" | "bottom" | "left" | "right";
 }>();
+
+const id = computed(() => props.id || randomString);
 
 const isOpen = ref(false);
 const positionClass = computed(() => {
@@ -54,13 +59,13 @@ const hideTooltip = () => {
 };
 
 onMounted(() => {
-  const el = document.querySelector(".relative.inline-block");
+  const el = document.getElementById(id.value);
   el?.addEventListener("mouseenter", showTooltip);
   el?.addEventListener("mouseleave", hideTooltip);
 });
 
 onUnmounted(() => {
-  const el = document.querySelector(".relative.inline-block");
+  const el = document.getElementById(id.value);
   el?.removeEventListener("mouseenter", showTooltip);
   el?.removeEventListener("mouseleave", hideTooltip);
 });
