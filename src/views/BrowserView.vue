@@ -107,12 +107,6 @@ const sources = reactive<Source[]>([
     link: "https://www.cnbc.com/quotes/${ticker}?qsearchterm=${ticker}",
   },
   {
-    id: 6,
-    name: "Business Insider",
-    selected: true,
-    link: "https://markets.businessinsider.com/stocks/${ticker}",
-  },
-  {
     id: 7,
     name: "Finviz",
     selected: true,

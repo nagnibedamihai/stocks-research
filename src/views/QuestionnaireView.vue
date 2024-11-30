@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto px-4 py-8">
-    <div class="w-full bg-white rounded-lg shadow-lg p-6 max-w-3xl mx-auto">
+    <div class="w-full bg-white rounded-lg shadow-lg p-6 mx-auto">
       <div class="flex flex-row justify-stretch align-middle items-stretch">
         <div class="grow">
           <h2 class="text-2xl font-bold mb-2">
@@ -13,36 +13,45 @@
             >
           </h2>
         </div>
-
-        <div class="w-48 bg-blue-100 px-4 py-2 rounded-lg">
-          <p class="text-lg font-semibold">Total Score: {{ totalScore }}</p>
-        </div>
       </div>
 
       <div>
         <hr class="my-3 border-gray-300" />
       </div>
 
-      <div class="mb-6 max-w-48">
-        <label
-          class="block text-base font-medium text-gray-700 mb-2"
-          for="ticker"
-          >Ticker:</label
+      <div class="w-full flex flex-col md:flex-row items-stretch gap-2 mb-3">
+        <div class="max-w-48">
+          <label
+            class="block text-base font-bold text-gray-700 mb-1"
+            for="ticker"
+            >Ticker:</label
+          >
+          <input
+            id="ticker"
+            v-model="ticker"
+            class="px-2 h-8 block w-full font-bold rounded-md border border-gray-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            type="text"
+            @input="ticker = ticker.toUpperCase()"
+          />
+        </div>
+
+        <div
+          class="w-48 bg-blue-100 px-4 py-1 rounded-lg flex flex-col justify-center"
         >
-        <input
-          id="ticker"
-          v-model="ticker"
-          class="px-2 h-8 block w-full font-bold rounded-md border border-gray-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-          type="text"
-          @input="ticker = ticker.toUpperCase()"
-        />
+          <p class="text-lg font-semibold">
+            Total Score: <br />
+            {{ totalScore }}
+          </p>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         <div
           v-for="(question, index) in questions"
           :key="index"
-          class="mb-3 w-full h-auto relative col-span-2"
+          :class="`mb-1 w-full h-auto relative ${
+            question.sectionTitle ? 'md:col-span-2 lg:col-span-3' : ''
+          }`"
         >
           <h2
             v-if="question.sectionTitle"
@@ -51,8 +60,8 @@
             <span class="w-full">{{ question.sectionTitle }}</span>
             <hr class="mb-3 border-gray-300" />
           </h2>
-          <h3 class="text-base font-semibold text-gray-900 mb-2">
-            {{ index + 1 }}) {{ question.text }}
+          <h3 v-else class="text-base font-semibold text-gray-900 mb-2">
+            {{ question.index }}) {{ question.text }}
             <DefaultTooltip
               v-if="questions[index].description"
               :text="questions[index].description"
@@ -79,7 +88,7 @@
                         ? 'bg-indigo-100 text-indigo-800 ring-2 ring-indigo-500 ring-offset-2'
                         : 'bg-gray-100 text-gray-800 hover:bg-gray-200',
                     ]"
-                    class="inline-block cursor-pointer px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out"
+                    class="inline-block cursor-pointer px-2 py-1 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out"
                   >
                     {{ option.label }}
                   </div>
@@ -191,8 +200,9 @@ const modalButtonText = ref("Got it, thanks!");
 
 const questions = [
   {
-    text: "Oversold condition",
+    text: "Signal",
     type: "radio",
+    index: 1,
     options: [
       { label: "Incredible", value: 3 },
       { label: "Great", value: 2 },
@@ -205,6 +215,7 @@ const questions = [
   {
     text: "Stock splits",
     type: "radio",
+    index: 2,
     options: [
       { label: "Reverse split", value: -999 },
       { label: "No Splits", value: 2 },
@@ -221,6 +232,7 @@ const questions = [
   {
     text: "Drop from recent high",
     type: "number",
+    index: 3,
     min: 0,
     max: 9,
     step: 1,
@@ -231,9 +243,12 @@ const questions = [
     description: "Each 10% drop from the recent high = 1 point",
   },
   {
+    sectionTitle: "The trend",
+  },
+  {
     text: "Broken Price action/RSI resistance?",
     type: "radio",
-    sectionTitle: "The trend",
+    index: 4,
     options: [
       { label: "Yes", value: 3 },
       { label: "No", value: 0 },
@@ -243,6 +258,7 @@ const questions = [
   {
     text: "Higher highs / higher lows?",
     type: "radio",
+    index: 5,
     options: [
       { label: "Yes", value: 2 },
       { label: "No", value: 0 },
@@ -252,6 +268,7 @@ const questions = [
   {
     text: "Has GRM support?",
     type: "radio",
+    index: 6,
     options: [
       { label: "Yes", value: 5 },
       { label: "No", value: 0 },
@@ -260,9 +277,12 @@ const questions = [
       "Has Golden Ratio Multiplier support on the 2-day chart and above? <br> Yes = 5 points, No = 0 points",
   },
   {
-    text: "Monthly candle support?",
     sectionTitle: "Support and resistance",
+  },
+  {
+    text: "Monthly candle support?",
     type: "radio",
+    index: 7,
     options: [
       { label: "Yes", value: 3 },
       { label: "No", value: 0 },
@@ -272,6 +292,7 @@ const questions = [
   {
     text: "Quarterly candle support?",
     type: "radio",
+    index: 8,
     options: [
       { label: "Yes", value: 4 },
       { label: "No", value: 0 },
@@ -281,6 +302,7 @@ const questions = [
   {
     text: "Bi-annual candle support?",
     type: "radio",
+    index: 9,
     options: [
       { label: "Yes", value: 5 },
       { label: "No", value: 0 },
@@ -290,6 +312,7 @@ const questions = [
   {
     text: "Annual candle support?",
     type: "radio",
+    index: 10,
     options: [
       { label: "Yes", value: 6 },
       { label: "No", value: 0 },
@@ -297,9 +320,12 @@ const questions = [
     description: "Yes = 6 points, No = 0 points",
   },
   {
+    sectionTitle: "Moving averages + Oscillators + Volume",
+  },
+  {
     text: "Did the buy signal print below the 100-month RMA?",
-    sectionTitle: "Moving averages",
     type: "radio",
+    index: 11,
     options: [
       { label: "Yes", value: 3 },
       { label: "No", value: 0 },
@@ -309,8 +335,8 @@ const questions = [
   },
   {
     text: "Weekly RSI > 50?",
-    sectionTitle: "Oscillators",
     type: "radio",
+    index: 12,
     options: [
       { label: "Yes", value: 3 },
       { label: "No", value: 0 },
@@ -320,6 +346,7 @@ const questions = [
   {
     text: "Stochastic RSI recently in the green?",
     type: "radio",
+    index: 13,
     options: [
       { label: "Yes", value: 3 },
       { label: "No", value: 0 },
@@ -329,6 +356,7 @@ const questions = [
   {
     text: "Divergence? Regular or hidden?",
     type: "radio",
+    index: 14,
     options: [
       { label: "Yes", value: 3 },
       { label: "No", value: 0 },
@@ -339,7 +367,7 @@ const questions = [
   {
     text: "Weekly volume increasing?",
     type: "radio",
-    sectionTitle: "Volume",
+    index: 15,
     options: [
       { label: "Yes", value: 1 },
       { label: "No", value: 0 },
@@ -347,10 +375,14 @@ const questions = [
     description: "Yes = 1 point, No = 0 points",
   },
   {
-    text: "Weekly chart",
     sectionTitle: "Candles",
+  },
+  {
+    text: "Weekly chart",
     type: "radio",
+    index: 16,
     options: [
+      { label: "No candle", value: 0 },
       { label: "Bullish engulfing / indecision candle", value: 1 },
       { label: "Reversal pattern? (hammer candle)", value: 2 },
       { label: "Dragonfly DOJI", value: 3 },
@@ -361,7 +393,9 @@ const questions = [
   {
     text: "10-day chart",
     type: "radio",
+    index: 17,
     options: [
+      { label: "No candle", value: 0 },
       { label: "Bullish engulfing / indecision candle", value: 1 },
       { label: "Reversal pattern? (hammer candle)", value: 2 },
       { label: "Dragonfly DOJI", value: 3 },
@@ -372,7 +406,9 @@ const questions = [
   {
     text: "1-Month chart",
     type: "radio",
+    index: 18,
     options: [
+      { label: "No candle", value: 0 },
       { label: "Bullish engulfing / indecision candle", value: 1 },
       { label: "Reversal pattern? (hammer candle)", value: 1 },
       { label: "Dragonfly DOJI", value: 2 },

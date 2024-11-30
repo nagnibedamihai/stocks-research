@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04fdbc68-ffcf-4339-84d9-cd54ae0e8145" name="Default Changelist" comment="Updates">
-      <change afterPath="$PROJECT_DIR$/src/components/ui/DefaultSlider.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/DefaultTooltip.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/DefaultTooltip.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/BrowserView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BrowserView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/QuestionnaireView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/QuestionnaireView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,8 +82,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
@@ -108,7 +108,9 @@
       <workItem from="1728986415650" duration="1825000" />
       <workItem from="1729091984258" duration="3000" />
       <workItem from="1729449869127" duration="6868000" />
-      <workItem from="1729459714813" duration="5502000" />
+      <workItem from="1729459714813" duration="7340000" />
+      <workItem from="1730152057056" duration="3468000" />
+      <workItem from="1733002904133" duration="352000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1622216209547</created>
